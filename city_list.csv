@@ -1,0 +1,11 @@
+,id,wikiDataId,type,city,name,country,countryCode,region,regionCode,latitude,longitude,population
+0,25981,Q338844,CITY,Batna,Batna,Algeria,DZ,Batna,05,35.55,6.166666666,2000000
+1,3192699,Q99976,ADM2,Santa Cruz de Tenerife Province,Santa Cruz de Tenerife Province,Spain,ES,Canary Islands,CN,28.166666666,-17.333333333,1018510
+2,26597,Q2900,CITY,Quito,Quito,Ecuador,EC,Pichincha,P,-0.22,-78.5125,2011388
+3,3135379,Q2466472,ADM2,Quito Metro,Quito Metro,Ecuador,EC,Pichincha,P,-0.21667,-78.5,2781641
+4,3298992,Q2283119,ADM2,Attock District,Attock District,Pakistan,PK,Punjab,PB,33.8738889,72.31111112,1886378
+5,154952,Q9022143,ADM2,León Municipality,León Municipality,Mexico,MX,Guanajuato,GUA,21.119722222,-101.680555555,1436480
+6,3453265,Q2841,CITY,Bogotá,Bogotá,Colombia,CO,Cundinamarca Department,CUN,4.60971,-74.08175,7743955
+7,14074,Q205914,CITY,Lijiang,Lijiang,People's Republic of China,CN,Yunnan,YN,26.880833333,100.220833333,1254000
+8,3453213,Q3624,CITY,Addis Ababa,Addis Ababa,Ethiopia,ET,Addis Ababa,AA,9.027222222,38.736944444,3041002
+9,87187,Q159273,CITY,Arequipa,Arequipa,Peru,PE,Arequipa,ARE,-16.398763888,-71.536883333,1008290
