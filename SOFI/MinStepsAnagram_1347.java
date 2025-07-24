@@ -1,6 +1,6 @@
 package Jack2025.SOFI;
 
-public class MinStepsAnagram {
+public class MinStepsAnagram_1347 {
     public static void main(String[] s)
     {
         System.out.println(minSteps("leetcode", "practice"));

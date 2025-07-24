@@ -1,2 +1,4 @@
-package Jack2025.Karat;public class AcademicSchedule_2 {
+package Jack2025.Karat;
+
+public class AcademicSchedule_2 {
 }
