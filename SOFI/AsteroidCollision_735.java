@@ -2,6 +2,11 @@ package Jack2025.SOFI;
 
 import java.util.Stack;
 
+/*This code simulates asteroid collisions using a stack, where positive numbers move right and negative numbers move left.
+        When a left-moving asteroid meets right-moving ones in the stack, smaller right-moving asteroids are popped until
+         either no collision is possible or both asteroids are the same size (and destroy each other).
+        Finally, the remaining asteroids in the stack are extracted into an array in their original order and returned.*/
+
 public class AsteroidCollision_735 {
 
     public static void main(String[] args)

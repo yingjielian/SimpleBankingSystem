@@ -1,5 +1,11 @@
 package Jack2025.SOFI;
 
+/*This code counts how many times each letter appears in both strings s and t using two frequency arrays of size 26 (one
+        for each lowercase letter).
+        It then sums the absolute differences between the two arrays to determine how many characters are mismatched
+        between the strings.
+        Finally, it divides the total by two because each replacement fixes one mismatch in both strings simultaneously,
+        giving the minimum number of steps required to make them anagrams.*/
 public class MinStepsAnagram_1347 {
     public static void main(String[] s)
     {
