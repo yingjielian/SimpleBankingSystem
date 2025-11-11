@@ -1,59 +1,79 @@
 package Jack2025;
 
-import java.math.BigInteger;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Stack;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Main {
 
     public static void main(String[] args)
     {
-//        String a = new String("hello");
-//        String b = new String("hello");
-//        System.out.println(a == b);
-//        System.out.println(a.equals(b));
 
-        System.out.println((char)(2 + '0'));
     }
 
-    private static class Node{
+    class TreeNode{
         int val;
-        Node next;
-        public Node(int val)
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x)
         {
-            this.val = val;
+            val = x;
         }
     }
 
-    Node head = null;
-    Node tail = null;
-    int length = 0;
-
-    public int get(int index)
+    public String serialize(TreeNode root)
     {
-        if(index < 0 || index >= length)
-            return -1;
+        if(root == null) return "";
 
-        Node temp = head;
-        for(int i = 0; i < index; i++)
+        StringBuilder res = new StringBuilder();
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while(!queue.isEmpty())
         {
-            temp = temp.next;
+            TreeNode node = queue.poll();
+            if(node == null)
+            {
+                res.append("null ");
+                continue;
+            }
+
+            res.append(node.val + " ");
+            queue.add(node.left);
+            queue.add(node.right);
         }
-        return temp.val;
+
+        return res.toString();
     }
 
-    private Node getNodeAtIndex(int index)
+    public TreeNode deserialize(String data)
     {
-        if(index < 0 || index >= length)
-            return null;
+        if(data == null || data.length() == 0) return null;
 
-        Node temp = head;
-        for(int i = 0; i < index; i++)
+        String[] str = data.split(" ");
+        TreeNode root = new TreeNode(Integer.parseInt(str[0]));
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+
+        for(int i = 1; i < str.length; i++)
         {
-            temp = temp.next;
-        }
-        return temp;
-    }
+            TreeNode node = queue.poll();
 
+            if(!str[i].equals("null"))
+            {
+                node.left = new TreeNode(Integer.parseInt(str[i]));
+                queue.add(node.left);
+            }
+            i++;
+
+            if(!str[i].equals("null"))
+            {
+                node.right = new TreeNode(Integer.parseInt(str[i]));
+                queue.add(node.right);
+            }
+        }
+
+        return root;
+    }
 }
