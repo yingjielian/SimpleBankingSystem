@@ -2,7 +2,7 @@ package Jack2026.Coinbase.BankingSystem;
 
 import java.util.*;
 
-public class BankingSystem_4 {
+class BankingSystem_4 {
     private Map<String, Integer> currentBalances = new HashMap<>();
     private Map<String, Integer> outgoingTotals = new HashMap<>();
     private Map<String, TreeMap<Integer, Integer>> history = new HashMap<>();
@@ -113,17 +113,18 @@ public class BankingSystem_4 {
         return pId;
     }
 
-    public boolean mergeAccounts(int timestamp, String id1, String id2)
-    {
+    public boolean mergeAccounts(int timestamp, String id1, String id2) {
         processCashbacks(timestamp);
-        if(id1.equals(id2) || !currentBalances.containsKey(id1) || !currentBalances.containsKey(id2)) return false;
+        if (id1.equals(id2) || !currentBalances.containsKey(id1) || !currentBalances.containsKey(id2)) return false;
 
+        // Add account2 funds/stats to account1
         int newBal1 = currentBalances.get(id1) + currentBalances.get(id2);
         currentBalances.put(id1, newBal1);
         updateHistory(id1, timestamp, newBal1);
 
         outgoingTotals.put(id1, outgoingTotals.get(id1) + outgoingTotals.get(id2));
 
+        // Remove account2 and redirect future events
         currentBalances.remove(id2);
         outgoingTotals.remove(id2);
         mergeTimes.put(id2, timestamp);
@@ -132,11 +133,10 @@ public class BankingSystem_4 {
         return true;
     }
 
-    public int getBalance(int timestamp, String accountId, int timeAt)
-    {
+    public int getBalance(int timestamp, String accountId, int timeAt) {
         processCashbacks(timestamp);
-        if(!creationTimes.containsKey(accountId) || creationTimes.get(accountId) > timeAt) return -1;
-        if(mergeTimes.containsKey(accountId) && mergeTimes.get(accountId) <= timeAt) return -1;
+        if (!creationTimes.containsKey(accountId) || creationTimes.get(accountId) > timeAt) return -1;
+        if (mergeTimes.containsKey(accountId) && mergeTimes.get(accountId) <= timeAt) return -1;
 
         return history.get(accountId).floorEntry(timeAt).getValue();
     }

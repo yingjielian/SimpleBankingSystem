@@ -2,8 +2,7 @@ package Jack2026.Coinbase.BankingSystem;
 
 import java.util.*;
 
-public class BankingSystem_2 {
-
+class BankingSystem_2 {
     private Map<String, Integer> balances;
     private Map<String, Integer> outgoingTotals;
 
@@ -40,8 +39,8 @@ public class BankingSystem_2 {
     public int transfer(int timestamp, String sourceAccountId, String targetAccountId, int amount) {
 
         if(sourceAccountId.equals(targetAccountId) ||
-        !balances.containsKey(sourceAccountId) ||
-        !balances.containsKey(targetAccountId))
+                !balances.containsKey(sourceAccountId) ||
+                !balances.containsKey(targetAccountId))
         {
             return -1;
         }
@@ -87,5 +86,4 @@ public class BankingSystem_2 {
 
         return result;
     }
-
 }

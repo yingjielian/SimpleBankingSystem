@@ -1,7 +1,8 @@
 package Jack2026.Coinbase.BankingSystem;
 
 import java.util.*;
-public class BankingSystem_3 {
+
+class BankingSystem_3 {
     private Map<String, Integer> balances = new HashMap<>();
     private Map<String, Integer> outgoingTotals = new HashMap<>();
 
@@ -121,6 +122,4 @@ public class BankingSystem_3 {
 
         return res;
     }
-
-
 }

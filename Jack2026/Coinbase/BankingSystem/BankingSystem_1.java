@@ -2,9 +2,7 @@ package Jack2026.Coinbase.BankingSystem;
 
 import java.util.*;
 
-public class BankingSystem_1 {
-
-    // Map to Store accountId as key and the current balance as value
+class BankingSystem_1 {
     private Map<String, Integer> accounts;
 
     // BankingSystem() Initializes the banking system with no accounts.
@@ -74,6 +72,7 @@ public class BankingSystem_1 {
         return sourceAccountNewBalance;
 
     }
+
 
     public static void main(String[] args) {
         BankingSystem_1 bs = new BankingSystem_1();
